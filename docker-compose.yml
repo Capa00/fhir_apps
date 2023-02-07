@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  fhir-apps:
+    image: 'fhir-apps'
+    build:
+      context: .
+
+    container_name: fhir-apps
+    ports:
+      - ${server_port:-9000}:9000
+    environment:
+      - server_url=https://jpa.unicom.datawizard.it/fhir/
